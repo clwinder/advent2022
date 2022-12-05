@@ -2,7 +2,6 @@ package main
 
 import (
 	"log"
-	"os"
 	"sort"
 	"strings"
 
@@ -10,10 +9,8 @@ import (
 )
 
 func main() {
-	b, err := os.ReadFile("input.txt")
-	if err != nil {
-		panic(err)
-	}
+	b := tools.ReadFile("input.txt")
+
 	elves := tools.SliceData(string(b), "\n\n", func(s string) string { return s })
 
 	calTots := totalsForElves(elves)

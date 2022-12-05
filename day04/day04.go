@@ -3,17 +3,13 @@ package main
 import (
 	"fmt"
 	"log"
-	"os"
 	"strings"
 
 	tools "github.com/clwinder/advent2022"
 )
 
 func main() {
-	b, err := os.ReadFile("input.txt")
-	if err != nil {
-		panic(err)
-	}
+	b := tools.ReadFile("input.txt")
 
 	pairs := tools.SliceData(string(b), "\n", func(s string) pair {
 		p := strings.Split(s, ",")

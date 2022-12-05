@@ -2,7 +2,6 @@ package main
 
 import (
 	"log"
-	"os"
 
 	tools "github.com/clwinder/advent2022"
 )
@@ -15,10 +14,7 @@ func main() {
 		itemPriorities[string(s)] = i + 1
 	}
 
-	b, err := os.ReadFile("input.txt")
-	if err != nil {
-		panic(err)
-	}
+	b := tools.ReadFile("input.txt")
 
 	rucksacks := tools.SliceData(string(b), "\n", func(s string) string { return s })
 

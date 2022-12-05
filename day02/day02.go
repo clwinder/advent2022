@@ -2,17 +2,13 @@ package main
 
 import (
 	"log"
-	"os"
 	"strings"
 
 	tools "github.com/clwinder/advent2022"
 )
 
 func main() {
-	b, err := os.ReadFile("input.txt")
-	if err != nil {
-		panic(err)
-	}
+	b := tools.ReadFile("input.txt")
 
 	rows := tools.SliceData(string(b), "\n", func(s string) string { return s })
 

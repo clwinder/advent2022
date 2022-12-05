@@ -1,6 +1,7 @@
 package tools
 
 import (
+	"os"
 	"strconv"
 	"strings"
 
@@ -48,6 +49,14 @@ func Intersection[T comparable](a []T, b []T) []T {
 		intersection = append(intersection, v)
 	}
 	return intersection
+}
+
+func ReadFile(name string) []byte {
+	b, err := os.ReadFile(name)
+	if err != nil {
+		panic(err)
+	}
+	return b
 }
 
 func StringToInt(s string) int {
