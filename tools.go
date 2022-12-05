@@ -1,6 +1,7 @@
 package tools
 
 import (
+	"strconv"
 	"strings"
 
 	"golang.org/x/exp/constraints"
@@ -47,4 +48,12 @@ func Intersection[T comparable](a []T, b []T) []T {
 		intersection = append(intersection, v)
 	}
 	return intersection
+}
+
+func StringToInt(s string) int {
+	v, err := strconv.Atoi(s)
+	if err != nil {
+		panic(err)
+	}
+	return v
 }

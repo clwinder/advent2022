@@ -4,7 +4,6 @@ import (
 	"log"
 	"os"
 	"sort"
-	"strconv"
 	"strings"
 
 	tools "github.com/clwinder/advent2022"
@@ -34,11 +33,7 @@ func totalsForElves(elves []string) []int {
 
 		cals := 0
 		for _, r := range rows {
-			c, err := strconv.Atoi(r)
-			if err != nil {
-				panic(err)
-			}
-			cals += c
+			cals += tools.StringToInt(r)
 		}
 
 		calTots[i] = cals
