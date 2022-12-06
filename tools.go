@@ -51,6 +51,19 @@ func Intersection[T comparable](a []T, b []T) []T {
 	return intersection
 }
 
+func Set[T comparable](in []T) []T {
+	s := make(map[T]struct{})
+	for _, v := range in {
+		s[v] = struct{}{}
+	}
+
+	set := make([]T, 0, len(s))
+	for k := range s {
+		set = append(set, k)
+	}
+	return set
+}
+
 func ReadFile(name string) []byte {
 	b, err := os.ReadFile(name)
 	if err != nil {
